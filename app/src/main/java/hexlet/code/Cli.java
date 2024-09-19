@@ -3,10 +3,12 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Cli {
-    public static void greetUserByName() {
+    private static final Scanner SCANNER = new Scanner(System.in);
+
+    public static String greetUserAndReturnName() {
         System.out.print("May I have your name? ");
-        Scanner scanner = new Scanner(System.in);
-        String userName = scanner.nextLine();
+        String userName = SCANNER.nextLine();
         System.out.println("Hello, " + userName + "!");
+        return userName;
     }
 }

@@ -3,4 +3,4 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a3aeddee20d8a9457c40/maintainability)](https://codeclimate.com/github/solominka/java-project-61/maintainability)
 
-<a href="https://codeclimate.com/github/solominka/java-project-61/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a3aeddee20d8a9457c40/test_coverage" /></a>
+Demo: [![asciicast](https://asciinema.org/a/NuaEmug5bwhlmHVidcedAcdPY.svg)](https://asciinema.org/a/NuaEmug5bwhlmHVidcedAcdPY)
