@@ -1,12 +1,10 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import java.util.Scanner;
 
-import hexlet.code.GameIterationResult;
+import hexlet.code.GameIteration;
 
 public class CalculatorGame {
-    private static final Scanner SCANNER = new Scanner(System.in);
     private static final Random RANDOM = new Random();
     private static final char[] OPERATIONS = {'+', '-', '*'};
 
@@ -16,15 +14,14 @@ public class CalculatorGame {
         System.out.println("What is the result of the expression?");
     }
 
-    public static GameIterationResult runIteration() {
+    public static GameIteration getIteration() {
         int firstNumber = RANDOM.nextInt(100);
         int secondNumber = RANDOM.nextInt(100);
         char operation = OPERATIONS[RANDOM.nextInt(3)];
-        System.out.println("Question: " + firstNumber + " " + operation + " " + secondNumber);
-        System.out.println("Your answer: ");
-        int userAnswer = SCANNER.nextInt();
-        int correctAnswer = calculateCorrectAnswer(firstNumber, secondNumber, operation);
-        return new GameIterationResult(userAnswer, correctAnswer);
+        return new GameIteration(
+                firstNumber + " " + operation + " " + secondNumber,
+                calculateCorrectAnswer(firstNumber, secondNumber, operation)
+        );
     }
 
     private static int calculateCorrectAnswer(int firstNumber, int secondNumber, char operation) {

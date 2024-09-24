@@ -1,12 +1,10 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import java.util.Scanner;
 
-import hexlet.code.GameIterationResult;
+import hexlet.code.GameIteration;
 
 public class CheckEvenGame {
-    private static final Scanner SCANNER = new Scanner(System.in);
     private static final Random RANDOM = new Random();
     public static final String GAME_NAME = "Even";
 
@@ -14,12 +12,13 @@ public class CheckEvenGame {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
     }
 
-    public static GameIterationResult runIteration() {
+    public static GameIteration getIteration() {
         int number = RANDOM.nextInt();
         System.out.println("Question: " + number);
         System.out.println("Your answer: ");
-        String userAnswer = SCANNER.nextLine();
-        String correctAnswer = (number % 2 == 0) ? "yes" : "no";
-        return new GameIterationResult(userAnswer, correctAnswer);
+        return new GameIteration(
+                String.valueOf(number),
+                (number % 2 == 0) ? "yes" : "no"
+        );
     }
 }

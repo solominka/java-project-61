@@ -1,22 +1,29 @@
 package hexlet.code;
 
 import java.util.Objects;
+import java.util.Scanner;
 
 import hexlet.code.games.CalculatorGame;
 import hexlet.code.games.CheckEvenGame;
 
 public class Engine {
+    private static final Scanner SCANNER = new Scanner(System.in);
     private static final int QUESTIONS_COUNT = 3;
 
     public static void runGame(int gameId, String userName) {
         printInstruction(gameId);
         for (int i = 0; i < QUESTIONS_COUNT; i++) {
-            GameIterationResult result = runIteration(gameId);
-            if (Objects.equals(result.userResponse, result.correctResponse)) {
+            GameIteration it = getIteration(gameId);
+            System.out.println("Question: " + it.question);
+            System.out.println("Your answer: ");
+            String userAnswer = SCANNER.nextLine();
+
+            if (Objects.equals(userAnswer, it.correctAnswer)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + result.userResponse + "' is wrong answer ;(. Correct answer was '" + result.correctResponse + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + it.correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
+                return;
             }
         }
         System.out.println("Congratulations, " + userName + "!");
@@ -35,10 +42,10 @@ public class Engine {
         }
     }
 
-    private static GameIterationResult runIteration(int gameId) {
+    private static GameIteration getIteration(int gameId) {
         return switch (gameId) {
-            case 2 -> CheckEvenGame.runIteration();
-            case 3 -> CalculatorGame.runIteration();
+            case 2 -> CheckEvenGame.getIteration();
+            case 3 -> CalculatorGame.getIteration();
             default -> throw new IllegalArgumentException("Unknown game id: " + gameId);
         };
     }
