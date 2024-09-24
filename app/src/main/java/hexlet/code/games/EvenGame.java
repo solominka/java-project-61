@@ -4,12 +4,12 @@ import java.util.Random;
 
 import hexlet.code.GameIteration;
 
-public class CheckEvenGame {
+public class EvenGame {
     private static final Random RANDOM = new Random();
     public static final String GAME_NAME = "Even";
 
     public static void printInstruction() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 
     public static GameIteration getIteration() {

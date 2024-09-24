@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 import hexlet.code.games.CalculatorGame;
-import hexlet.code.games.CheckEvenGame;
+import hexlet.code.games.EvenGame;
 import hexlet.code.games.GCDGame;
 import hexlet.code.games.PrimeGame;
 import hexlet.code.games.ProgressionGame;
@@ -35,7 +35,7 @@ public class Engine {
     private static void printInstruction(int gameId) {
         switch (gameId) {
             case 2:
-                CheckEvenGame.printInstruction();
+                EvenGame.printInstruction();
                 break;
             case 3:
                 CalculatorGame.printInstruction();
@@ -56,7 +56,7 @@ public class Engine {
 
     private static GameIteration getIteration(int gameId) {
         return switch (gameId) {
-            case 2 -> CheckEvenGame.getIteration();
+            case 2 -> EvenGame.getIteration();
             case 3 -> CalculatorGame.getIteration();
             case 4 -> GCDGame.getIteration();
             case 5 -> ProgressionGame.getIteration();
