@@ -7,15 +7,19 @@ import hexlet.code.GameIteration;
 public class ProgressionGame {
     private static final Random RANDOM = new Random();
     public static final String GAME_NAME = "Progression";
+    public static final int GAME_ID = 5;
+    public static final int MAX = 100;
+    public static final int MIN_SIZE = 5;
+    public static final int MAX_SIZE = 15;
 
     public static void printInstruction() {
         System.out.println("What number is missing in the progression?");
     }
 
     public static GameIteration getIteration() {
-        int firstNumber = RANDOM.nextInt(100);
-        int step = RANDOM.nextInt(100);
-        int size = RANDOM.nextInt(5, 15);
+        int firstNumber = RANDOM.nextInt(MAX);
+        int step = RANDOM.nextInt(MAX);
+        int size = RANDOM.nextInt(MIN_SIZE, MAX_SIZE);
         int hiddenIndex = RANDOM.nextInt(0, size);
         StringBuilder question = new StringBuilder();
         for (int i = 0; i < size; i++) {

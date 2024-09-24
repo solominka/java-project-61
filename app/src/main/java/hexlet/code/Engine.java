@@ -17,14 +17,14 @@ public class Engine {
         printInstruction(gameId);
         for (int i = 0; i < QUESTIONS_COUNT; i++) {
             GameIteration it = getIteration(gameId);
-            System.out.println("Question: " + it.question);
+            System.out.println("Question: " + it.getQuestion());
             System.out.println("Your answer: ");
             String userAnswer = SCANNER.nextLine();
 
-            if (Objects.equals(userAnswer, it.correctAnswer)) {
+            if (Objects.equals(userAnswer, it.getCorrectAnswer())) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + it.correctAnswer + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + it.getCorrectAnswer() + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 return;
             }
@@ -34,19 +34,19 @@ public class Engine {
 
     private static void printInstruction(int gameId) {
         switch (gameId) {
-            case 2:
+            case EvenGame.GAME_ID:
                 EvenGame.printInstruction();
                 break;
-            case 3:
+            case CalculatorGame.GAME_ID:
                 CalculatorGame.printInstruction();
                 break;
-            case 4:
+            case GCDGame.GAME_ID:
                 GCDGame.printInstruction();
                 break;
-            case 5:
+            case ProgressionGame.GAME_ID:
                 ProgressionGame.printInstruction();
                 break;
-            case 6:
+            case PrimeGame.GAME_ID:
                 PrimeGame.printInstruction();
                 break;
             default:
@@ -56,11 +56,11 @@ public class Engine {
 
     private static GameIteration getIteration(int gameId) {
         return switch (gameId) {
-            case 2 -> EvenGame.getIteration();
-            case 3 -> CalculatorGame.getIteration();
-            case 4 -> GCDGame.getIteration();
-            case 5 -> ProgressionGame.getIteration();
-            case 6 -> PrimeGame.getIteration();
+            case EvenGame.GAME_ID -> EvenGame.getIteration();
+            case CalculatorGame.GAME_ID -> CalculatorGame.getIteration();
+            case GCDGame.GAME_ID -> GCDGame.getIteration();
+            case ProgressionGame.GAME_ID -> ProgressionGame.getIteration();
+            case PrimeGame.GAME_ID -> PrimeGame.getIteration();
             default -> throw new IllegalArgumentException("Unknown game id: " + gameId);
         };
     }

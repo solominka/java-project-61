@@ -29,12 +29,10 @@ public class App {
             case 1:
                 Cli.greetUserAndReturnName();
                 break;
-            case 2, 3, 4, 5, 6:
+            default:
                 String userName = Cli.greetUserAndReturnName();
                 Engine.runGame(chosenGameId, userName);
                 break;
-            default:
-                System.out.println("There is no option " + chosenGameId + ", try again");
         }
     }
 }

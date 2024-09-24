@@ -9,15 +9,17 @@ public class CalculatorGame {
     private static final char[] OPERATIONS = {'+', '-', '*'};
 
     public static final String GAME_NAME = "Calc";
+    public static final int GAME_ID = 3;
+    public static final int MAX = 100;
 
     public static void printInstruction() {
         System.out.println("What is the result of the expression?");
     }
 
     public static GameIteration getIteration() {
-        int firstNumber = RANDOM.nextInt(100);
-        int secondNumber = RANDOM.nextInt(100);
-        char operation = OPERATIONS[RANDOM.nextInt(3)];
+        int firstNumber = RANDOM.nextInt(MAX);
+        int secondNumber = RANDOM.nextInt(MAX);
+        char operation = OPERATIONS[RANDOM.nextInt(OPERATIONS.length)];
         return new GameIteration(
                 firstNumber + " " + operation + " " + secondNumber,
                 calculateCorrectAnswer(firstNumber, secondNumber, operation)
