@@ -2,6 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 
+import hexlet.code.games.CalculatorGame;
 import hexlet.code.games.CheckEvenGame;
 
 public class App {
@@ -9,23 +10,24 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
-        System.out.println("2 - " + CheckEvenGame.GAME_NAME);
         System.out.println("1 - Greet");
+        System.out.println("2 - " + CheckEvenGame.GAME_NAME);
+        System.out.println("3 - " + CalculatorGame.GAME_NAME);
         System.out.println("0 - Exit");
-        int chosenGameNumber = SCANNER.nextInt();
-        System.out.println("Your choice: " + chosenGameNumber);
-        switch (chosenGameNumber) {
+        int chosenGameId = SCANNER.nextInt();
+        System.out.println("Your choice: " + chosenGameId);
+        switch (chosenGameId) {
             case 0:
                 break;
             case 1:
                 Cli.greetUserAndReturnName();
                 break;
-            case 2:
+            case 2, 3:
                 String userName = Cli.greetUserAndReturnName();
-                CheckEvenGame.runGame(userName);
+                Engine.runGame(chosenGameId, userName);
                 break;
             default:
-                System.out.println("There is no option " + chosenGameNumber + ", try again");
+                System.out.println("There is no option " + chosenGameId + ", try again");
         }
     }
 }
