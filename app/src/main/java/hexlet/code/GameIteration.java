@@ -4,9 +4,9 @@ public final class GameIteration {
     private final String question;
     private final String correctAnswer;
 
-    public GameIteration(String _question, Object _correctAnswer) {
-        this.question = _question;
-        this.correctAnswer = _correctAnswer.toString();
+    public GameIteration(String newQuestion, Object newCorrectAnswer) {
+        this.question = newQuestion;
+        this.correctAnswer = newCorrectAnswer.toString();
     }
 
     public String getQuestion() {
