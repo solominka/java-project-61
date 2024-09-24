@@ -14,8 +14,6 @@ public class CheckEvenGame {
 
     public static GameIteration getIteration() {
         int number = RANDOM.nextInt();
-        System.out.println("Question: " + number);
-        System.out.println("Your answer: ");
         return new GameIteration(
                 String.valueOf(number),
                 (number % 2 == 0) ? "yes" : "no"

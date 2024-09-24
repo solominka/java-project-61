@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import hexlet.code.games.CalculatorGame;
 import hexlet.code.games.CheckEvenGame;
+import hexlet.code.games.GCDGame;
 
 public class App {
     private static final Scanner SCANNER = new Scanner(System.in);
@@ -13,6 +14,7 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - " + CheckEvenGame.GAME_NAME);
         System.out.println("3 - " + CalculatorGame.GAME_NAME);
+        System.out.println("4 - " + GCDGame.GAME_NAME);
         System.out.println("0 - Exit");
         int chosenGameId = SCANNER.nextInt();
         System.out.println("Your choice: " + chosenGameId);
@@ -22,7 +24,7 @@ public class App {
             case 1:
                 Cli.greetUserAndReturnName();
                 break;
-            case 2, 3:
+            case 2, 3, 4:
                 String userName = Cli.greetUserAndReturnName();
                 Engine.runGame(chosenGameId, userName);
                 break;
