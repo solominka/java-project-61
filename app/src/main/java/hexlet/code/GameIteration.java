@@ -1,12 +1,12 @@
 package hexlet.code;
 
-public class GameIteration {
+public final class GameIteration {
     private final String question;
     private final String correctAnswer;
 
-    public GameIteration(String question, Object correctAnswer) {
-        this.question = question;
-        this.correctAnswer = correctAnswer.toString();
+    public GameIteration(String _question, Object _correctAnswer) {
+        this.question = _question;
+        this.correctAnswer = _correctAnswer.toString();
     }
 
     public String getQuestion() {
