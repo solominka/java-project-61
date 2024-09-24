@@ -6,6 +6,7 @@ import java.util.Scanner;
 import hexlet.code.games.CalculatorGame;
 import hexlet.code.games.CheckEvenGame;
 import hexlet.code.games.GCDGame;
+import hexlet.code.games.ProgressionGame;
 
 public class Engine {
     private static final Scanner SCANNER = new Scanner(System.in);
@@ -41,6 +42,9 @@ public class Engine {
             case 4:
                 GCDGame.printInstruction();
                 break;
+            case 5:
+                ProgressionGame.printInstruction();
+                break;
             default:
                 throw new IllegalArgumentException("Unknown game id: " + gameId);
         }
@@ -51,6 +55,7 @@ public class Engine {
             case 2 -> CheckEvenGame.getIteration();
             case 3 -> CalculatorGame.getIteration();
             case 4 -> GCDGame.getIteration();
+            case 5 -> ProgressionGame.getIteration();
             default -> throw new IllegalArgumentException("Unknown game id: " + gameId);
         };
     }
