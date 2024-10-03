@@ -5,7 +5,7 @@ import java.util.Random;
 import hexlet.code.Game;
 import hexlet.code.model.GameIteration;
 
-public class CalculatorGame implements Game {
+public final class CalculatorGame implements Game {
     private static final Random RANDOM = new Random();
     private static final char[] OPERATIONS = {'+', '-', '*'};
 

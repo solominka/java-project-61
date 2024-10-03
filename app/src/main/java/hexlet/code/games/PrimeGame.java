@@ -5,7 +5,7 @@ import java.util.Random;
 import hexlet.code.Game;
 import hexlet.code.model.GameIteration;
 
-public class PrimeGame implements Game {
+public final class PrimeGame implements Game {
     private static final Random RANDOM = new Random();
     public static final String GAME_NAME = "Prime";
     public static final int GAME_ID = 6;
