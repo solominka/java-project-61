@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.model;
 
 public final class GameIteration {
     private final String question;

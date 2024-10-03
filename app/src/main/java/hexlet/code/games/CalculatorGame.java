@@ -2,9 +2,10 @@ package hexlet.code.games;
 
 import java.util.Random;
 
-import hexlet.code.GameIteration;
+import hexlet.code.Game;
+import hexlet.code.model.GameIteration;
 
-public class CalculatorGame {
+public class CalculatorGame implements Game {
     private static final Random RANDOM = new Random();
     private static final char[] OPERATIONS = {'+', '-', '*'};
 
@@ -12,11 +13,11 @@ public class CalculatorGame {
     public static final int GAME_ID = 3;
     public static final int MAX = 100;
 
-    public static void printInstruction() {
-        System.out.println("What is the result of the expression?");
+    public String getInstruction() {
+        return "What is the result of the expression?";
     }
 
-    public static GameIteration getIteration() {
+    public GameIteration getIteration() {
         int firstNumber = RANDOM.nextInt(MAX);
         int secondNumber = RANDOM.nextInt(MAX);
         char operation = OPERATIONS[RANDOM.nextInt(OPERATIONS.length)];

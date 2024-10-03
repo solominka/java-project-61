@@ -2,18 +2,19 @@ package hexlet.code.games;
 
 import java.util.Random;
 
-import hexlet.code.GameIteration;
+import hexlet.code.Game;
+import hexlet.code.model.GameIteration;
 
-public class EvenGame {
+public class EvenGame implements Game {
     private static final Random RANDOM = new Random();
     public static final String GAME_NAME = "Even";
     public static final int GAME_ID = 2;
 
-    public static void printInstruction() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+    public String getInstruction() {
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    public static GameIteration getIteration() {
+    public GameIteration getIteration() {
         int number = RANDOM.nextInt();
         return new GameIteration(
                 String.valueOf(number),

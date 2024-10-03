@@ -23,15 +23,30 @@ public class App {
         System.out.println("0 - Exit");
         int chosenGameId = SCANNER.nextInt();
         System.out.println("Your choice: " + chosenGameId);
+
         switch (chosenGameId) {
             case 0:
                 break;
             case 1:
-                Cli.greetUserAndReturnName();
+                Cli.greetUser();
+                break;
+            case EvenGame.GAME_ID:
+                Engine.runGame(new EvenGame());
+                break;
+            case CalculatorGame.GAME_ID:
+                Engine.runGame(new CalculatorGame());
+                break;
+            case GCDGame.GAME_ID:
+                Engine.runGame(new GCDGame());
+                break;
+            case ProgressionGame.GAME_ID:
+                Engine.runGame(new ProgressionGame());
+                break;
+            case PrimeGame.GAME_ID:
+                Engine.runGame(new PrimeGame());
                 break;
             default:
-                String userName = Cli.greetUserAndReturnName();
-                Engine.runGame(chosenGameId, userName);
+                System.out.println("Sorry, could not find game by number " + chosenGameId + ", try again");
                 break;
         }
     }
